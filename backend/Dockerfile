@@ -8,7 +8,7 @@ WORKDIR /app
 
 # Copy the built JAR file into the working directory
 
-COPY target/P2Demo-0.0.1-SNAPSHOT.jar ./
+COPY target/P2Demo-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the port that the Spring application listens on
 
