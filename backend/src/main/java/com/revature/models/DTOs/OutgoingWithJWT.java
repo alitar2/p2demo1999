@@ -1,24 +1,23 @@
 package com.revature.models.DTOs;
 
-
 import com.revature.models.Team;
 
-// common DTO: so we can send user info without password
-public class OutgoingUserDTO {
-
+public class OutgoingWithJWT {
     private int userID;
     private String username;
     private String role;
     private Team team;
+    private String token;
 
-    public OutgoingUserDTO() {
+    public OutgoingWithJWT() {
     }
 
-    public OutgoingUserDTO(int userID, String username, String role, Team team) {
+    public OutgoingWithJWT(int userID, String username, String role, Team team, String token) {
         this.userID = userID;
         this.username = username;
         this.role = role;
         this.team = team;
+        this.token = token;
     }
 
     public int getUserID() {
@@ -53,15 +52,22 @@ public class OutgoingUserDTO {
         this.team = team;
     }
 
+    public String getToken() {
+        return token;
+    }
 
+    public void setToken(String token) {
+        this.token = token;
+    }
 
     @Override
     public String toString() {
-        return "OutgoingUserDTO{" +
+        return "OutgoingWithJWT{" +
                 "userID=" + userID +
                 ", username='" + username + '\'' +
                 ", role='" + role + '\'' +
                 ", team=" + team +
+                ", token='" + token + '\'' +
                 '}';
     }
 }
